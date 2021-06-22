@@ -225,3 +225,7 @@ footer{
     height:40px;
     margin-top: -20px;
 }
+
+.social a{
+    margin-left: 10px;
+}
