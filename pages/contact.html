@@ -31,28 +31,30 @@
         </nav>
     </header>
     
-    <main>
-        <h1>Formulario de contacto</h1>
-        <form action="">
-            <label for="name">Nombre: </label>
-            <input id="name" type="text">
-            <label for="mail">Correo Electronico: </label>
-            <input id="mail" type="email">
-            <label for="service">Servicio: </label>
-            <select name="service" id="service">
-                <option value="web">Web</option>
-                <option value="mobile">Mobile</option>
-                <option value="desktop">Desktop</option>
-                <option value="videogames">Videojuegos</option>
-            </select>
-            <label for="newsletter">Desea suscribirse al newsletter: </label>
-            <input id="newsletter" type="checkbox">
-            <label for="message">Especificaciones: </label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-            <input class="secondaryButton" type="reset" value="Borrar Datos">
-            <input class="primaryButton" type="submit" value="Enviar">
-        </form>
-    </main>
+    <div class="wrapper">
+        <main>
+            <h1>Formulario de contacto</h1>
+            <form action="">
+                <label for="name">Nombre: </label>
+                <input id="name" type="text">
+                <label for="mail">Correo Electronico: </label>
+                <input id="mail" type="email">
+                <label for="service">Servicio: </label>
+                <select name="service" id="service">
+                    <option value="web">Web</option>
+                    <option value="mobile">Mobile</option>
+                    <option value="desktop">Desktop</option>
+                    <option value="videogames">Videojuegos</option>
+                </select>
+                <label for="newsletter">Desea suscribirse al newsletter: </label>
+                <input id="newsletter" type="checkbox">
+                <label for="message">Especificaciones: </label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                <input class="secondaryButton" type="reset" value="Borrar Datos">
+                <input class="primaryButton" type="submit" value="Enviar">
+            </form>
+        </main>
+    </div>
     
     <footer>
         <a href="../index.html"><img class="logo" src="../assets/icons/logotipo.svg" alt="Logotipo" width="100px"></a>
