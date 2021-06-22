@@ -1,0 +1,227 @@
+/*-----------------------Estilos Generales--------------------------------*/
+* {
+    margin     : 0;
+    padding    : 0;
+    box-sizing : border-box;
+}
+
+html {
+    font-size : 26.5%;
+}
+
+body {
+    background-color : #020C1B;
+}
+
+h1, h2, h3, h4 {
+    font-family : 'Roboto', sans-serif;
+    color       : #A8B2D1;
+    font-weight : 700;
+    text-align  : center;
+    margin: 20px 0;
+}
+
+p.caption {
+    text-align  : center;
+}
+
+article {
+    text-align : center;
+}
+
+h1 {
+    font-size : 8rem;
+}
+
+h2 {
+    font-size       : 7rem;
+    text-decoration : underline;
+}
+
+h3 {
+    font-size : 5.5rem;
+}
+
+h4 {
+    font-size : 3.5rem;
+}
+
+p {
+    font-family : 'Roboto Mono', monospace;
+    color       : #E6F1FF;
+    font-size   : 3.5rem;
+    margin: 20px 20px;
+}
+
+.caption {
+    font-family : 'Roboto Mono', monospace;
+    font-weight : 200;
+    color       : #64FFDA;
+    font-size   : 3.5rem;
+}
+
+
+hr {
+    background-color : #64FFDA;
+}
+
+main img{
+    display : block;
+    margin: 10px auto;
+}
+
+/*-----------------------Fin de los estilos Generales--------------------------------*/
+
+/*----------------------------Estilos del Header------------------------------------*/
+
+.header {
+    background-color : #020C1B;
+    width            : 100%;
+    height           : 50px;
+    position         : sticky;
+    top              : 0;
+}
+
+.nav {
+    display    : inline-block;
+    position   : absolute;
+    height     : 30px;
+    top        : 50%;
+    margin-top : -15px;
+    right:50%;
+    transform: translateX(50%);
+}
+
+.item {
+    display  : inline-block;
+    position : relative;
+}
+
+.item:hover > .submenu {
+    display : block;
+}
+
+.submenu {
+    position         : absolute;
+    display          : none;
+    right            : -18px;
+    background-color : #233554;
+}
+
+.submenu > .item {
+    display : block;
+}
+
+.logo {
+    padding : 10px;
+}
+
+.link {
+    text-decoration : none;
+    font-family     : 'Roboto Mono', monospace;
+    font-weight     : 700;
+    font-size       : 3.5rem;
+    color           : #64FFDA;
+    text-transform  : uppercase;
+    display         : block;
+    padding         : 2px 5px;
+}
+
+.link:hover {
+    background-color : #64FFDA;
+    color            : #020C1B;
+}
+
+/*-----------------------Fin de los estilos del Header--------------------------------*/
+
+main {
+    margin-bottom : 70px;
+}
+
+/*-----------------------Estilos de los Botones--------------------------------*/
+button {
+    font-family    : 'Roboto Mono', monospace;
+    font-weight    : 700;
+    font-size      : 3.5rem;
+    text-transform : uppercase;
+    border-radius  : 5px;
+    padding: 5px;
+}
+
+.primaryButton {
+    background-color : #64FFDA;
+    color            : #020C1B;
+}
+
+.secondaryButton {
+    border           : 2px solid #64FFDA;
+    background-color : transparent;
+    color            : #64FFDA;
+}
+
+/*-----------------------Fin de los estilos de los Botones--------------------------------*/
+
+/*-----------------------Estilos de Formularios--------------------------------*/
+label {
+    font-family : 'Roboto Mono', monospace;
+    font-size   : 3.5rem;
+    color       : #CCD6F6;
+}
+
+/*-----------------------Fin de los estilos de Formularios--------------------------------*/
+/*-----------------------Estilos de Tablas--------------------------------*/
+.tableService {
+    color       : #8892B0;
+    font-family : 'Roboto Mono', monospace;
+    font-weight : 700;
+    font-size   : 3.5rem;
+}
+
+.tableCategory {
+    color       : #CCD6F6;
+    font-family : 'Roboto Mono', monospace;
+    font-weight : 700;
+    font-size   : 3.5rem;
+}
+
+td {
+    font-family : 'Roboto Mono', monospace;
+    color       : #E6F1FF;
+    font-size   : 3.5rem;
+}
+
+td li {
+    list-style-position : inside;
+}
+
+/*-----------------------Fin de los estilos de Tablas--------------------------------*/
+
+footer{
+    position : fixed;
+    bottom : 0;
+    height : 50px;
+    width :100%;
+    background-color : #233554;
+}
+
+.copyright{
+    display: inline-block;
+    position : absolute;
+    right : 50%;
+    top : 50%;
+    padding: 10px 0;
+    height:40px;
+    margin-top: -20px;
+    margin-inline: 0;
+    transform: translateX(50%);
+}
+
+.social{
+    position : absolute;
+    display: inline-block;
+    right: 20px;
+    top : 50%;
+    padding: 10px 0;
+    height:40px;
+    margin-top: -20px;
+}
