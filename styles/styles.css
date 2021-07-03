@@ -1,4 +1,14 @@
 /*-----------------------Estilos Generales--------------------------------*/
+:root {
+    --background-color     : #0A192F;
+    --sub-background-color : #233554;
+    --title-color          : #CCD6F6;
+    --text-color           : #E6F1FF;
+    --emphasis-color       : #64FFDA;
+    --primary-font         : 'Roboto Mono', monospace;
+    --title-font           : 'Roboto', sans-serif;
+}
+
 * {
     margin     : 0;
     padding    : 0;
@@ -10,23 +20,18 @@ html {
 }
 
 body {
-    background-color : #020C1B;
+    background-color : var(--background-color);
+    font-family      : var(--primary-font);
+    color            : var(--text-color);
+    font-weight      : 400;
 }
 
 h1, h2, h3, h4 {
-    font-family : 'Roboto', sans-serif;
-    color       : #A8B2D1;
+    font-family : var(--title-font);
+    color       : var(--title-color);
     font-weight : 700;
     text-align  : center;
-    margin: 20px 0;
-}
-
-p.caption {
-    text-align  : center;
-}
-
-article {
-    text-align : center;
+    margin      : 20px 0;
 }
 
 h1 {
@@ -34,8 +39,7 @@ h1 {
 }
 
 h2 {
-    font-size       : 7rem;
-    text-decoration : underline;
+    font-size : 7rem;
 }
 
 h3 {
@@ -47,27 +51,43 @@ h4 {
 }
 
 p {
-    font-family : 'Roboto Mono', monospace;
-    color       : #E6F1FF;
-    font-size   : 3.5rem;
-    margin: 20px 20px;
+    font-size : 3.5rem;
+    margin    : 20px 20px;
+}
+
+p.caption {
+    text-align : center;
 }
 
 .caption {
-    font-family : 'Roboto Mono', monospace;
     font-weight : 200;
-    color       : #64FFDA;
+    color       : var(--emphasis-color);
     font-size   : 3.5rem;
 }
 
-
-hr {
-    background-color : #64FFDA;
+img {
+    width : 500px;
 }
 
-main img{
+.me {
+    width         : 200px;
+    border-radius : 50%;
+}
+
+article {
+    text-align : center;
+}
+
+main img {
     display : block;
-    margin: 10px auto;
+    margin  : 10px auto;
+}
+
+.wrapper {
+    width    : 90%;
+    margin   : 0 auto;
+    padding  : 50px 0;
+    position : relative;
 }
 
 /*-----------------------Fin de los estilos Generales--------------------------------*/
@@ -75,67 +95,63 @@ main img{
 /*----------------------------Estilos del Header------------------------------------*/
 
 .header {
-    background-color : #020C1B;
-    width            : 100%;
-    height           : 50px;
+    background-color : var(--background-color);
+    width            : 90%;
+    height           : 40px;
+    padding-block    : 5px;
+    margin           : 0 auto 20px;
+    display          : flex;
+    justify-content  : space-between;
     position         : fixed;
     top              : 0;
-    z-index: 2;
+    z-index          : 2;
+}
+
+.logoContainer {
+    display    : flex;
+    align-self : center;
+    height     : 70%;
+    width      : 100px;
 }
 
 .nav {
-    display    : inline-block;
-    position   : absolute;
-    height     : 30px;
-    top        : 50%;
-    margin-top : -15px;
-    right:50%;
-    transform: translateX(50%);
+    display      : flex;
+    align-self   : center;
+    margin-right : 10px;
 }
 
-.header button {
-    display    : inline-block;
-    position   : absolute;
-    height     : 30px;
-    top        : 50%;
-    margin-top : -15px;
-    right:20px;
-    /*transform: translateX(50%);*/
+.menu {
+    display    : flex;
+    list-style : none;
+}
+
+.submenu {
+    display                   : none;
+    flex-direction            : column;
+    position                  : absolute;
+    top                       : 100%;
+    background-color          : var(--sub-background-color);
+    border-bottom-left-radius : 30px;
+    list-style                : none;
 }
 
 .item {
-    display  : inline-block;
     position : relative;
 }
 
 .item:hover > .submenu {
-    display : block;
-}
-
-.submenu {
-    position         : absolute;
-    display          : none;
-    right            : -18px;
-    background-color : #233554;
-}
-
-.submenu > .item {
-    display : block;
-}
-
-.logo {
-    padding : 10px;
+    display : flex;
 }
 
 .link {
+    display         : inline-block;
+    padding         : 0.5rem 2rem;
     text-decoration : none;
-    font-family     : 'Roboto Mono', monospace;
-    font-weight     : 700;
+    color           : var(--emphasis-color);
     font-size       : 3.5rem;
-    color           : #64FFDA;
+    font-weight     : 700;
     text-transform  : uppercase;
-    display         : block;
-    padding         : 2px 5px;
+    width           : 100%;
 }
 
 .link:hover {
@@ -143,138 +159,263 @@ main img{
     color            : #020C1B;
 }
 
-/*-----------------------Fin de los estilos del Header--------------------------------*/
-
-.wrapper{
-    width: 90%;
-    margin: 0 auto;
-    padding:50px 0;
+.menu > .item > .link {
+    border-right               : 1px solid #64FFDA;
+    border-bottom              : 1px solid #64FFDA;
+    border-bottom-right-radius : 30px;
 }
 
-main {
-    position : relative;
-}
-
-.mainContent{
-    width : 70%;
-}
-
-.recents{
-    position : fixed;
-    top : 50px;
-    right: 0;
-    width: 20%;
-    height : 100vh;
-    overflow: auto;
-    background-color : #233554;
-}
-
-.skillCard{
-    padding : 10px;
-}
-
-.skillCard:nth-of-type(odd) {
+.submenu > .item:nth-of-type(even) > .link {
     border-right               : 3px solid #64FFDA;
     border-bottom              : 3px solid #64FFDA;
     border-bottom-right-radius : 30px;
 }
 
-.skillCard:nth-of-type(even) {
+.submenu > .item:nth-of-type(odd) > .link {
     border-left               : 3px solid #64FFDA;
     border-bottom             : 3px solid #64FFDA;
     border-bottom-left-radius : 30px;
     flex-direction            : row-reverse;
 }
 
-/*-----------------------Estilos de los Botones--------------------------------*/
-button {
-    font-family    : 'Roboto Mono', monospace;
-    font-weight    : 700;
+/*-----------------------Fin de los estilos del Header--------------------------------*/
+/*----------------------------Estilos del Index------------------------------------*/
+main {
+    position : relative;
+}
+
+.mainContent {
+    width : 70%;
+}
+
+.recents {
+    position         : fixed;
+    top              : 40px;
+    right            : 5%;
+    width            : 20%;
+    height           : calc(100vh - 80px);
+    overflow         : auto;
+    background-color : #233554;
+}
+
+.recents p:last-of-type {
+    padding-bottom : 10px;
+}
+
+.container {
+    padding     : 10px;
+    display     : flex;
+    flex        : 1;
+    align-items : center;
+}
+
+.container img:not(.me) {
+    width : 60%;
+}
+
+.container:nth-of-type(odd) {
+    border-right               : 3px solid #64FFDA;
+    border-bottom              : 3px solid #64FFDA;
+    border-bottom-right-radius : 30px;
+    flex-direction             : row;
+}
+
+.container:nth-of-type(even) {
+    border-left               : 3px solid #64FFDA;
+    border-bottom             : 3px solid #64FFDA;
+    border-bottom-left-radius : 30px;
+    flex-direction            : row-reverse;
+}
+
+.container:first-of-type {
+    flex-direction : column;
+}
+
+/*----------------------------Fin de estilos del Index------------------------------------*/
+/*-----------------------Estilos de Formularios--------------------------------*/
+form {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    text-align     : center;
+    margin         : 30px;
+    gap            : 10px;
+}
+
+.form-content {
+    width : 500px;
+}
+
+label {
     font-size      : 3.5rem;
-    text-transform : uppercase;
-    border-radius  : 5px;
-    padding: 5px;
+    color          : var(--title-color);
+    display        : flex;
+    flex-direction : column;
+    gap            : 5px;
+    margin-block   : 10px;
 }
 
-.primaryButton {
-    background-color : #64FFDA;
-    color            : #020C1B;
+input {
+    background-color : transparent;
+    margin           : 10px auto;
+    border           : none;
+    border-bottom    : 2px solid var(--emphasis-color);
+    border-radius    : 3px;
+    outline          : none;
 }
 
-.secondaryButton {
-    border           : 2px solid #64FFDA;
+.newsletter {
+    display : inline;
+}
+
+input:focus {
+    box-shadow : 0 0 1px 2px rgba(100, 255, 218, 0.3);
+}
+
+select {
     background-color : transparent;
     color            : #64FFDA;
+    border           : none;
 }
 
-/*-----------------------Fin de los estilos de los Botones--------------------------------*/
+select:focus {
+    border : none;
+}
 
-/*-----------------------Estilos de Formularios--------------------------------*/
-label {
-    font-family : 'Roboto Mono', monospace;
-    font-size   : 3.5rem;
-    color       : #CCD6F6;
+select:active {
+    border : none;
+}
+
+option {
+    background-color : var(--sub-background-color);
+    outline          : none;
+}
+
+textarea {
+    background-color : transparent;
+    border           : 1px solid #64FFDA;
+    border-radius    : 5px;
+    color            : #E6F1FF;
+    outline          : none;
+    display          : block;
+    margin           : 10px auto;
+}
+
+textarea:focus {
+    box-shadow : 0 0 1px 2px rgba(100, 255, 218, 0.3);
+}
+
+input.button {
+    margin-inline : 10px;
 }
 
 /*-----------------------Fin de los estilos de Formularios--------------------------------*/
 /*-----------------------Estilos de Tablas--------------------------------*/
-.tableService {
-    color       : #8892B0;
-    font-family : 'Roboto Mono', monospace;
+table {
+    margin    : 10px auto;
+    font-size : 3.5rem;
+}
+
+th {
     font-weight : 700;
-    font-size   : 3.5rem;
+}
+
+.tableService {
+    color            : var(--background-color);
+    background-color : var(--emphasis-color);
 }
 
 .tableCategory {
-    color       : #CCD6F6;
-    font-family : 'Roboto Mono', monospace;
-    font-weight : 700;
-    font-size   : 3.5rem;
-}
-
-td {
-    font-family : 'Roboto Mono', monospace;
-    color       : #E6F1FF;
-    font-size   : 3.5rem;
+    color            : var(--emphasis-color);
+    background-color : var(--sub-background-color);
 }
 
 td li {
     list-style-position : inside;
 }
 
+th, td {
+    padding    : 10px;
+    text-align : center;
+}
+
+td ul, td ol {
+    text-align : left;
+}
+
 /*-----------------------Fin de los estilos de Tablas--------------------------------*/
+/*----------------------------Estilos del Footer------------------------------------*/
 
-footer{
-    position : fixed;
-    bottom : 0;
-    height : 50px;
-    width :100%;
-    background-color : #233554;
-    /*margin-top: -70px;*/
+.footer {
+    background-color : var(--background-color);
+    width            : 90%;
+    height           : 40px;
+    padding-block    : 5px;
+    margin           : 20px auto 0;
+    display          : flex;
+    justify-content  : space-between;
+    position         : fixed;
+    bottom           : 0;
+    z-index          : 2;
 }
 
-.copyright{
-    display: inline-block;
-    position : absolute;
-    right : 50%;
-    top : 50%;
-    padding: 10px 0;
-    height:40px;
-    margin-top: -20px;
-    margin-inline: 0;
-    transform: translateX(50%);
+.copyright {
+    display      : flex;
+    align-self   : center;
+    margin-right : 10px;
+
 }
 
-.social{
-    position : absolute;
-    display: inline-block;
-    right: 20px;
-    top : 50%;
-    padding: 10px 0;
-    height:40px;
-    margin-top: -20px;
+.social {
+    display      : flex;
+    align-self   : center;
+    margin-right : 10px;
 }
 
-.social a{
-    margin-left: 10px;
+.socialLogo {
+    width         : 30px;
+    height        : 30px;
+    margin-inline : 2px;
+    padding       : 5px;
+    border-radius : 3px;
 }
+
+.socialLogo:hover {
+    background-color : var(--emphasis-color);
+    fill             : var(--background-color);
+}
+
+/*----------------------------Fin de estilos del Footer------------------------------------*/
+/*----------------------------Estilos de los Botones--------------------------------------*/
+.button {
+    color            : #E6F1FF;
+    background-color : transparent;
+    font-size        : 3.5rem;
+    font-weight      : bold;
+    border           : 2px solid #64FFDA;
+    border-radius    : 3px;
+    padding          : 5px;
+    text-decoration  : none;
+    text-transform   : uppercase;
+    line-height      : 1;
+    cursor           : pointer;
+}
+
+.button:hover {
+    background-color : #64FFDA;
+    color            : #0A192F;
+}
+
+/*Boton primario pendiente de encontrar un diseño atractivo*/
+
+/*.primaryButton {*/
+/*    color            : var(--background-color);*/
+/*    background-color : var(--emphasis-color);*/
+/*}*/
+
+/*.primaryButton:hover {*/
+/*    color            : #E6F1FF;*/
+/*    background-color : var(--background-color);*/
+/*}*/
+
+/*----------------------------Fin de estilos de los Botones--------------------------------------*/
