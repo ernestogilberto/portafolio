@@ -7,6 +7,10 @@
     --emphasis-color       : #64FFDA;
     --primary-font         : 'Roboto Mono', monospace;
     --title-font           : 'Roboto', sans-serif;
+    --heading-1            : 7rem;
+    --heading-2            : 6rem;
+    --heading-3            : 4.5rem;
+    --text                 : 2.5rem;
 }
 
 * {
@@ -24,6 +28,7 @@ body {
     font-family      : var(--primary-font);
     color            : var(--text-color);
     font-weight      : 400;
+    font-size        : var(--text);
 }
 
 h1, h2, h3, h4 {
@@ -35,24 +40,19 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size : 8rem;
+    font-size : var(--heading-1);
 }
 
 h2 {
-    font-size : 7rem;
+    font-size : var(--heading-2);
 }
 
 h3 {
-    font-size : 5.5rem;
-}
-
-h4 {
-    font-size : 3.5rem;
+    font-size : var(--heading-3);
 }
 
 p {
-    font-size : 3.5rem;
-    margin    : 20px 20px;
+    margin : 20px 20px;
 }
 
 p.caption {
@@ -62,7 +62,6 @@ p.caption {
 .caption {
     font-weight : 200;
     color       : var(--emphasis-color);
-    font-size   : 3.5rem;
 }
 
 img {
@@ -84,13 +83,13 @@ main img {
 }
 
 .wrapper {
-    width    : 100%;
-    margin   : 0 auto;
-    padding-top  : 40px;
-    position : relative;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto 40px;
+    width                 : 100%;
+    margin                : 0 auto;
+    padding-top           : 40px;
+    position              : relative;
+    display               : grid;
+    grid-template-columns : 100%;
+    grid-template-rows    : auto 40px;
 }
 
 /*-----------------------Fin de los estilos Generales--------------------------------*/
@@ -107,58 +106,7 @@ main img {
     position         : fixed;
     top              : 0;
     z-index          : 2;
-    padding-inline: 20px;
-}
-
-.hamburger{
-    position : relative;
-    width : 8rem;
-    height : 6.5rem;
-    cursor: pointer;
-    transition: transform 0.25s;
-}
-
-.hamburger::before, .hamburger::after{
-    content: ' ';
-    display : block;
-    transition: transform, translate 0.25s;
-}
-
-.hamburger::before, .hamburger::after, .line{
-    position : absolute;
-    width : 100%;
-    height : 5px;
-    background : var(--emphasis-color);
-}
-
-.hamburger::before{
-    top : 0;
-}
-
-.line{
-    top : 50%;
-    transform: translateY(-50%);
-}
-
-.hamburger::after{
-    bottom: 0;
-}
-
-.hamburger.active{
-    transform: rotate(180deg);
-}
-.active .line{
-    display: none;
-}
-
-.active::before{
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-}
-
-.active::after{
-    bottom: 50%;
-    transform: translateY(50%) rotate(-45deg);
+    padding-inline   : 20px;
 }
 
 .logoContainer {
@@ -202,7 +150,6 @@ main img {
     padding         : 0.5rem 2rem;
     text-decoration : none;
     color           : var(--emphasis-color);
-    font-size       : 3.5rem;
     font-weight     : 700;
     text-transform  : uppercase;
     width           : 100%;
@@ -235,45 +182,41 @@ main img {
 /*-----------------------Fin de los estilos del Header--------------------------------*/
 /*----------------------------Estilos del Index------------------------------------*/
 main {
-    position : relative;
-    grid-column: 1;
-    grid-row: 1;
+    position    : relative;
+    grid-column : 1;
+    grid-row    : 1;
 }
 
 .mainContent {
     max-width : 70%;
-    min-width: 400px;
-    margin: 0 auto;
+    min-width : 400px;
+    margin    : 0 auto;
 }
 
-.recents {
-    /*position         : fixed;*/
-    /*top              : 40px;*/
-    /*right            : 5%;*/
-    /*width            : 20%;*/
-    /*height           : calc(100vh - 80px);*/
+.recent {
     background-color : #233554;
-    grid-column: 1;
-    grid-row: 1;
-}
-.recents-container{
-    display: grid;
-    overflow         : auto;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-flow: column;
+    grid-column      : 1;
+    grid-row         : 1;
 }
 
-.recents-content{
-    max-width: 30vw;
-    min-width: 300px;
+.recent-container {
+    display               : grid;
+    overflow              : auto;
+    grid-template-columns : repeat(3, 1fr);
+    grid-auto-flow        : column;
 }
 
-.recents p{
-    text-align: left;
+.recent-content {
+    max-width : 30vw;
+    min-width : 300px;
 }
 
-.recents p:last-of-type {
-    margin-block: 0;
+.recent p {
+    text-align : left;
+}
+
+.recent p:last-of-type {
+    margin-block   : 0;
     padding-bottom : 10px;
 }
 
@@ -318,11 +261,36 @@ form {
 }
 
 .form-content {
-    width : 500px;
+    width               : 500px;
+    display             : grid;
+    grid-template-areas : 'name''mail''services''newsletter''specs''specs''buttons';
+}
+
+.name {
+    grid-area : name;
+}
+
+.mail {
+    grid-area : mail;
+}
+
+.services {
+    grid-area : services;
+}
+
+.newsletter {
+    grid-area : newsletter;
+}
+
+.specs {
+    grid-area : especifications;
+}
+
+.buttons {
+    grid-area : buttons;
 }
 
 label {
-    font-size      : 3.5rem;
     color          : var(--title-color);
     display        : flex;
     flex-direction : column;
@@ -339,7 +307,7 @@ input {
     outline          : none;
 }
 
-.newsletter {
+.newsletter-label {
     display : inline;
 }
 
@@ -387,8 +355,7 @@ input.button {
 /*-----------------------Fin de los estilos de Formularios--------------------------------*/
 /*-----------------------Estilos de Tablas--------------------------------*/
 table {
-    margin    : 10px auto;
-    font-size : 3.5rem;
+    margin : 10px auto;
 }
 
 th {
@@ -431,15 +398,13 @@ td ul, td ol {
     position         : fixed;
     bottom           : 0;
     z-index          : 2;
-    padding-inline: 10px;
+    padding-inline   : 10px;
 }
 
 .copyright {
-    display      : flex;
-    align-self   : center;
-    margin : 10px;
-    font-size: 2.5rem;
-
+    display    : flex;
+    align-self : center;
+    margin     : 10px;
 }
 
 .social {
@@ -466,7 +431,6 @@ td ul, td ol {
 .button {
     color            : #E6F1FF;
     background-color : transparent;
-    font-size        : 3.5rem;
     font-weight      : bold;
     border           : 2px solid #64FFDA;
     border-radius    : 3px;
@@ -494,50 +458,110 @@ td ul, td ol {
 /*    background-color : var(--background-color);*/
 /*}*/
 
+.hamburger {
+    display    : none;
+    position   : relative;
+    width      : 8rem;
+    height     : 6.5rem;
+    cursor     : pointer;
+    transition : transform 0.25s;
+}
+
+.hamburger::before, .hamburger::after {
+    content    : ' ';
+    display    : block;
+    transition : transform, translate 0.25s;
+}
+
+.hamburger::before, .hamburger::after, .line {
+    position   : absolute;
+    width      : 100%;
+    height     : 5px;
+    background : var(--emphasis-color);
+}
+
+.hamburger::before {
+    top : 0;
+}
+
+.line {
+    top       : 50%;
+    transform : translateY(-50%);
+}
+
+.hamburger::after {
+    bottom : 0;
+}
+
+.hamburger.active {
+    transform : rotate(180deg);
+}
+
+.active .line {
+    display : none;
+}
+
+.active::before {
+    top       : 50%;
+    transform : translateY(-50%) rotate(45deg);
+}
+
+.active::after {
+    bottom    : 50%;
+    transform : translateY(50%) rotate(-45deg);
+}
+
 /*----------------------------Fin de estilos de los Botones--------------------------------------*/
 
-@media screen and (min-width: 1024px){
-    .recents{
-        position         : fixed;
-        top              : 40px;
-        right            : 0;
-        max-width            : 25%;
-        min-width: 320px;
-        height           : calc(100vh - 80px);
-        overflow: auto;
+@media screen and (min-width : 1024px) {
+    :root {
+        --heading-1 : 8rem;
+        --heading-2 : 7rem;
+        --heading-3 : 5.5rem;
+        --text      : 3.5rem;
     }
 
-    .recents-container{
-        display: block;
-        /*overflow: auto;*/
-        /*grid-template-columns: 1fr;*/
-        /*grid-template-rows: repeat(3, 1fr);*/
-        /*grid-auto-flow: row;*/
+    .recent {
+        position  : fixed;
+        top       : 40px;
+        right     : 0;
+        max-width : 25%;
+        min-width : 320px;
+        height    : calc(100vh - 80px);
+        overflow  : auto;
     }
 
-    .recents p{
-        padding-inline: 10px;
+    .recent-container {
+        display : block;
+    }
+
+    .recent p {
+        padding-inline : 10px;
     }
 
     .container:nth-of-type(odd) {
-        flex-direction             : row;
+        flex-direction : row;
     }
 
     .container:nth-of-type(even) {
-        flex-direction            : row-reverse;
+        flex-direction : row-reverse;
     }
 
     .container:first-of-type {
         flex-direction : column;
     }
 
-    .mainContent{
-        width: 65%;
-        margin: 10px;
+    .mainContent {
+        width  : 65%;
+        margin : 10px;
     }
 
-    .copyright{
-        font-size: 3.5rem;
-        margin: 20px;
+    .copyright {
+        margin : 20px;
+    }
+
+    .form-content {
+        width               : 800px;
+        grid-template-areas : 'name services''mail specs' 'newsletter specs''buttons buttons';
     }
 }

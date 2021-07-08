@@ -49,22 +49,33 @@
             
             <form action="">
                 <div class="form-content">
-                    <label for="name">Nombre: </label>
-                    <input id="name" type="text">
-                    <label for="mail">Correo Electronico: </label>
-                    <input id="mail" type="email">
-                    <label for="service">Servicio: </label>
-                    <select id="service" name="service">
-                        <option value="web">Web</option>
-                        <option value="mobile">Mobile</option>
-                        <option value="desktop">Desktop</option>
-                        <option value="videogames">Videojuegos</option>
-                    </select>
-                    <label for="message">Especificaciones: </label>
-                    <textarea cols="30" id="message" name="message" rows="10"></textarea>
-                    <label class="newsletter" for="newsletter">Desea suscribirse al newsletter: </label>
-                    <input id="newsletter" type="checkbox">
-                    <div>
+                    <div class="name">
+                        <label for="name">Nombre: </label>
+                        <input id="name" type="text">
+                    </div>
+                    <div class="mail">
+                        <label for="mail">Correo Electronico: </label>
+                        <input id="mail" type="email">
+                    </div>
+                    <div class="services">
+                        <label for="service">Servicio: </label>
+                        <select id="service" name="service">
+                            <option value="web">Web</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="desktop">Desktop</option>
+                            <option value="videogames">Videojuegos</option>
+                        </select>
+                    </div>
+                    <div class="specs">
+                        <label for="message">Especificaciones: </label>
+                        <textarea cols="30" id="message" name="message" rows="10"></textarea>
+                    </div>
+                    <div class="newsletter">
+                        <label class="newsletter-label" for="newsletter">Desea suscribirse al
+                            newsletter: </label>
+                        <input id="newsletter" type="checkbox">
+                    </div>
+                    <div class="buttons">
                         <input class="button" type="reset" value="Borrar Datos">
                         <input class="button primaryButton" type="submit" value="Enviar">
                     </div>
