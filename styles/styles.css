@@ -99,11 +99,11 @@ main img {
     width            : 90%;
     height           : 40px;
     padding-block    : 5px;
-    margin           : 0 auto 20px;
     display          : flex;
     justify-content  : space-between;
     position         : fixed;
     top              : 0;
+    left: 5%;
     z-index          : 2;
 }
 
@@ -351,11 +351,11 @@ td ul, td ol {
     width            : 90%;
     height           : 40px;
     padding-block    : 5px;
-    margin           : 20px auto 0;
     display          : flex;
     justify-content  : space-between;
     position         : fixed;
     bottom           : 0;
+    left: 5%;
     z-index          : 2;
 }
 
