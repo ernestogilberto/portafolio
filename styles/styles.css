@@ -84,10 +84,13 @@ main img {
 }
 
 .wrapper {
-    width    : 90%;
+    width    : 100%;
     margin   : 0 auto;
-    padding  : 50px 0;
+    padding-top  : 40px;
     position : relative;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 100px;
 }
 
 /*-----------------------Fin de los estilos Generales--------------------------------*/
@@ -96,15 +99,15 @@ main img {
 
 .header {
     background-color : var(--background-color);
-    width            : 90%;
+    width            : 100%;
     height           : 40px;
     padding-block    : 5px;
     display          : flex;
     justify-content  : space-between;
     position         : fixed;
     top              : 0;
-    left: 5%;
     z-index          : 2;
+    padding-inline: 20px;
 }
 
 .logoContainer {
@@ -182,23 +185,44 @@ main img {
 /*----------------------------Estilos del Index------------------------------------*/
 main {
     position : relative;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .mainContent {
-    width : 70%;
+    max-width : 70%;
+    min-width: 400px;
+    margin: 0 auto;
 }
 
 .recents {
-    position         : fixed;
-    top              : 40px;
-    right            : 5%;
-    width            : 20%;
-    height           : calc(100vh - 80px);
-    overflow         : auto;
+    /*position         : fixed;*/
+    /*top              : 40px;*/
+    /*right            : 5%;*/
+    /*width            : 20%;*/
+    /*height           : calc(100vh - 80px);*/
     background-color : #233554;
+    grid-column: 1;
+    grid-row: 1;
+}
+.recents-container{
+    display: grid;
+    overflow         : auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+}
+
+.recents-content{
+    max-width: 30vw;
+    min-width: 300px;
+}
+
+.recents p{
+    text-align: left;
 }
 
 .recents p:last-of-type {
+    margin-block: 0;
     padding-bottom : 10px;
 }
 
@@ -217,14 +241,14 @@ main {
     border-right               : 3px solid #64FFDA;
     border-bottom              : 3px solid #64FFDA;
     border-bottom-right-radius : 30px;
-    flex-direction             : row;
+    flex-direction             : column;
 }
 
 .container:nth-of-type(even) {
     border-left               : 3px solid #64FFDA;
     border-bottom             : 3px solid #64FFDA;
     border-bottom-left-radius : 30px;
-    flex-direction            : row-reverse;
+    flex-direction            : column;
 }
 
 .container:first-of-type {
@@ -348,21 +372,22 @@ td ul, td ol {
 
 .footer {
     background-color : var(--background-color);
-    width            : 90%;
+    width            : 100%;
     height           : 40px;
     padding-block    : 5px;
     display          : flex;
     justify-content  : space-between;
     position         : fixed;
     bottom           : 0;
-    left: 5%;
     z-index          : 2;
+    padding-inline: 10px;
 }
 
 .copyright {
     display      : flex;
     align-self   : center;
-    margin-right : 10px;
+    margin : 10px;
+    font-size: 2.5rem;
 
 }
 
@@ -419,3 +444,49 @@ td ul, td ol {
 /*}*/
 
 /*----------------------------Fin de estilos de los Botones--------------------------------------*/
+
+@media screen and (min-width: 1024px){
+    .recents{
+        position         : fixed;
+        top              : 40px;
+        right            : 0;
+        max-width            : 25%;
+        min-width: 320px;
+        height           : calc(100vh - 80px);
+        overflow: auto;
+    }
+
+    .recents-container{
+        display: block;
+        /*overflow: auto;*/
+        /*grid-template-columns: 1fr;*/
+        /*grid-template-rows: repeat(3, 1fr);*/
+        /*grid-auto-flow: row;*/
+    }
+
+    .recents p{
+        padding-inline: 10px;
+    }
+
+    .container:nth-of-type(odd) {
+        flex-direction             : row;
+    }
+
+    .container:nth-of-type(even) {
+        flex-direction            : row-reverse;
+    }
+
+    .container:first-of-type {
+        flex-direction : column;
+    }
+
+    .mainContent{
+        width: 65%;
+        margin: 10px;
+    }
+
+    .copyright{
+        font-size: 3.5rem;
+        margin: 20px;
+    }
+}
