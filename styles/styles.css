@@ -283,7 +283,7 @@ form {
 }
 
 .specs {
-    grid-area : especifications;
+    grid-area : specs;
 }
 
 .buttons {
