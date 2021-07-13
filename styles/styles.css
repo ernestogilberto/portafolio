@@ -209,7 +209,6 @@ main {
 }
 
 .container {
-    margin-inline: 5px;
     padding     : 5px;
     display     : flex;
     /*flex        : 1;*/
@@ -555,7 +554,6 @@ td ul, td ol {
     .mainContent {
         max-width  : 65%;
         min-width: 40%;
-        margin : 20px;
     }
 
     .copyright {
