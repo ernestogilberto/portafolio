@@ -209,6 +209,7 @@ main {
 }
 
 .container {
+    margin-inline: 10px;
     padding     : 10px;
     display     : flex;
     flex        : 1;
