@@ -553,7 +553,8 @@ td ul, td ol {
     }
 
     .mainContent {
-        width  : 65%;
+        max-width  : 65%;
+        min-width: 40%;
         margin : 20px;
     }
 
