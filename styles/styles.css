@@ -13,10 +13,10 @@
     --text                 : 2.5rem;
 }
 
-* {
-    margin     : 0;
-    padding    : 0;
-    box-sizing : border-box;
+*, :after, :before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -95,60 +95,22 @@ main img {
 /*-----------------------Fin de los estilos Generales--------------------------------*/
 
 /*----------------------------Estilos del Header------------------------------------*/
-
-.header {
-    background-color : var(--background-color);
-    width            : 100%;
-    height           : 40px;
-    padding-block    : 5px;
-    display          : flex;
-    justify-content  : space-between;
-    position         : fixed;
-    top              : 0;
-    z-index          : 2;
-    padding-inline   : 20px;
+a{
+    text-decoration: none;
 }
 
-.logoContainer {
-    display    : flex;
-    align-self : center;
-    height     : 70%;
-    width      : 100px;
+div{
+    display: block;
 }
 
-.nav {
-    display      : flex;
-    align-self   : center;
-    margin-right : 10px;
-}
-
-.menu {
-    display    : flex;
-    list-style : none;
-}
-
-.submenu {
-    display                   : none;
-    flex-direction            : column;
-    position                  : absolute;
-    top                       : 100%;
-    background-color          : var(--sub-background-color);
-    border-bottom-left-radius : 30px;
-    list-style                : none;
-}
-
-.item {
-    position : relative;
-}
-
-.item:hover > .submenu {
-    display : flex;
+.header .wrapper{
+    display: grid;
+    padding: 10px;
 }
 
 .link {
-    display         : inline-block;
+    display         : inline;
     padding         : 0.5rem 2rem;
-    text-decoration : none;
     color           : var(--emphasis-color);
     font-weight     : 700;
     text-transform  : uppercase;
@@ -156,29 +118,55 @@ main img {
 }
 
 .link:hover {
-    background-color : #64FFDA;
-    color            : #020C1B;
+    font-size: 4rem;
 }
 
-.menu > .item > .link {
-    border-right               : 1px solid #64FFDA;
-    border-bottom              : 1px solid #64FFDA;
-    border-bottom-right-radius : 30px;
+.nav ul{
+    list-style: none;
 }
 
-.submenu > .item:nth-of-type(even) > .link {
-    border-right               : 3px solid #64FFDA;
-    border-bottom              : 3px solid #64FFDA;
-    border-bottom-right-radius : 30px;
+.logo{
+    width: 200px;
 }
 
-.submenu > .item:nth-of-type(odd) > .link {
-    border-left               : 3px solid #64FFDA;
-    border-bottom             : 3px solid #64FFDA;
-    border-bottom-left-radius : 30px;
-    flex-direction            : row-reverse;
+.nav{
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background: var(--sub-background-color);
+    transition: transform 1s;
+    transform: translateX(100%);
 }
 
+.nav .menu{
+    top: 0;
+    left: 0;
+}
+
+.nav .menu a{
+    display: block;
+    font-weight: 700;
+    color: var(--emphasis-color);
+    letter-spacing: .2em;
+    padding: 15px;
+}
+
+.nav .social{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.nav .social svg{
+    width: 30px;
+    height: 30px;
+    fill: var(--emphasis-color);
+}
 /*-----------------------Fin de los estilos del Header--------------------------------*/
 /*----------------------------Estilos del Index------------------------------------*/
 main {
@@ -401,6 +389,10 @@ td ul, td ol {
     padding-inline   : 10px;
 }
 
+.footer .logo{
+    height: 100%;
+}
+
 .copyright {
     display    : flex;
     align-self : center;
@@ -446,7 +438,7 @@ td ul, td ol {
     color            : #0A192F;
 }
 
-/*Boton primario pendiente de encontrar un diseño atractivo*/
+/*Botón primario pendiente de encontrar un diseño atractivo*/
 
 /*.primaryButton {*/
 /*    color            : var(--background-color);*/
@@ -457,14 +449,22 @@ td ul, td ol {
 /*    color            : #E6F1FF;*/
 /*    background-color : var(--background-color);*/
 /*}*/
-
 .hamburger {
-    display    : none;
-    position   : relative;
-    width      : 8rem;
-    height     : 6.5rem;
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
     cursor     : pointer;
     transition : transform 0.25s;
+    z-index: 5;
+    border: 0;
+    margin: 10px;
+}
+
+.nav.active{
+    transform: translateX(0);
 }
 
 .hamburger::before, .hamburger::after {
@@ -510,7 +510,6 @@ td ul, td ol {
     bottom    : 50%;
     transform : translateY(50%) rotate(-45deg);
 }
-
 /*----------------------------Fin de estilos de los Botones--------------------------------------*/
 
 @media screen and (min-width : 1024px) {
@@ -523,7 +522,7 @@ td ul, td ol {
 
     .recent {
         position  : fixed;
-        top       : 40px;
+        top       : 100px;
         right     : 0;
         max-width : 25%;
         min-width : 320px;
@@ -563,5 +562,52 @@ td ul, td ol {
     .form-content {
         width               : 800px;
         grid-template-areas : 'name services''mail specs' 'newsletter specs''buttons buttons';
+    }
+}
+
+@media screen and (min-width: 768px){
+    .header .wrapper{
+        grid-template-columns: 100px 1fr;
+    }
+
+    .hamburger{
+        display: none;
+    }
+
+    .nav{
+        position: relative;
+        flex-direction: column;
+        transform: translateX(0);
+        background: 0 0;
+        padding: 0;
+    }
+
+    .nav, .nav .menu{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .nav .menu{
+        order: 2;
+    }
+
+    .nav .social{
+        position: absolute;
+        top: 0;
+        bottom: auto;
+        right: 0;
+    }
+
+    .nav .social svg{
+        width: 25px;
+        height: 25px;
+    }
+
+    .nav .social svg:hover{
+        border-radius: 5px;
+        padding: 2px;
+        background-color: var(--emphasis-color);
+        fill: var(--background-color);
+        transition: fill .5s;
     }
 }
