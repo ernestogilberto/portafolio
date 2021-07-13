@@ -209,6 +209,7 @@ main {
 }
 
 .container {
+    /*margin-inline: 5px;*/
     padding     : 5px;
     display     : flex;
     /*flex        : 1;*/
@@ -567,7 +568,9 @@ td ul, td ol {
 }
 
 @media screen and (min-width: 768px){
-
+    .mainContent{
+        margin : 20px;
+    }
     .footer .logo{
         display: inline;
     }
