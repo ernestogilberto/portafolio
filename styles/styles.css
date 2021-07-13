@@ -92,10 +92,6 @@ main img {
     grid-template-rows    : auto 40px;
 }
 
-.main-wrapper{
-    width: 95%;
-}
-
 /*-----------------------Fin de los estilos Generales--------------------------------*/
 
 /*----------------------------Estilos del Header------------------------------------*/
@@ -557,7 +553,7 @@ td ul, td ol {
 
     .mainContent {
         width  : 65%;
-        margin : 10px;
+        margin : 20px;
     }
 
     .copyright {
