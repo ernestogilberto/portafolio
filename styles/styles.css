@@ -13,10 +13,10 @@
     --text                 : 2.5rem;
 }
 
-*, :after, :before{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*, :after, :before {
+    box-sizing : border-box;
+    margin     : 0;
+    padding    : 0;
 }
 
 html {
@@ -92,85 +92,82 @@ main img {
     grid-template-rows    : auto 40px;
 }
 
-.main-wrapper{
-    width: 95%;
-}
-
 /*-----------------------Fin de los estilos Generales--------------------------------*/
 
 /*----------------------------Estilos del Header------------------------------------*/
-a{
-    text-decoration: none;
+a {
+    text-decoration : none;
 }
 
-div{
-    display: block;
+div {
+    display : block;
 }
 
-.header .wrapper{
-    display: grid;
-    padding: 10px;
+.header .wrapper {
+    display : grid;
+    padding : 10px;
 }
 
 .link {
-    display         : inline;
-    padding         : 0.5rem 2rem;
-    color           : var(--emphasis-color);
-    font-weight     : 700;
-    text-transform  : uppercase;
-    width           : 100%;
+    display        : inline;
+    padding        : 0.5rem 2rem;
+    color          : var(--emphasis-color);
+    font-weight    : 700;
+    text-transform : uppercase;
+    width          : 100%;
 }
 
 .link:hover {
-    font-size: 4rem;
+    font-size : 4rem;
 }
 
-.nav ul{
-    list-style: none;
+.nav ul {
+    list-style : none;
 }
 
-.logo{
-    width: 200px;
+.logo {
+    width : 200px;
 }
 
-.nav{
-    display: flex;
-    justify-content: flex-start;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    background: var(--sub-background-color);
-    transition: transform 1s;
-    transform: translateX(100%);
+.nav {
+    display         : flex;
+    justify-content : flex-start;
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    z-index         : 5;
+    background      : var(--sub-background-color);
+    transition      : transform 1s;
+    transform       : translateX(100%);
 }
 
-.nav .menu{
-    top: 0;
-    left: 0;
+.nav .menu {
+    top  : 0;
+    left : 0;
 }
 
-.nav .menu a{
-    display: block;
-    font-weight: 700;
-    color: var(--emphasis-color);
-    letter-spacing: .2em;
-    padding: 15px;
+.nav .menu a {
+    display        : block;
+    font-weight    : 700;
+    color          : var(--emphasis-color);
+    letter-spacing : .2em;
+    padding        : 15px;
 }
 
-.nav .social{
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
+.nav .social {
+    position : absolute;
+    bottom   : 30px;
+    right    : 30px;
 }
 
-.nav .social svg{
-    width: 30px;
-    height: 30px;
-    fill: var(--emphasis-color);
+.nav .social svg {
+    width  : 30px;
+    height : 30px;
+    fill   : var(--emphasis-color);
 }
+
 /*-----------------------Fin de los estilos del Header--------------------------------*/
 /*----------------------------Estilos del Index------------------------------------*/
 main {
@@ -213,9 +210,10 @@ main {
 }
 
 .container {
-    padding     : 10px;
+    /*margin-inline: 5px;*/
+    padding     : 5px;
     display     : flex;
-    flex        : 1;
+    /*flex        : 1;*/
     align-items : center;
 }
 
@@ -393,9 +391,9 @@ td ul, td ol {
     padding-inline   : 10px;
 }
 
-.footer .logo{
-    display: none;
-    height: 100%;
+.footer .logo {
+    display : none;
+    height  : 100%;
 }
 
 .copyright {
@@ -455,21 +453,22 @@ td ul, td ol {
 /*    background-color : var(--background-color);*/
 /*}*/
 .hamburger {
-    display: block;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 40px;
-    height: 40px;
-    cursor     : pointer;
-    transition : transform 0.25s;
-    z-index: 5;
-    border: 0;
-    margin: 10px;
+    display          : block;
+    position         : fixed;
+    right            : 0;
+    top              : 0;
+    width            : 30px;
+    height           : 30px;
+    cursor           : pointer;
+    transition       : transform 0.25s;
+    z-index          : 5;
+    border           : 0;
+    margin           : 10px;
+    background-color : var(--background-color);
 }
 
-.nav.active{
-    transform: translateX(0);
+.nav.active {
+    transform : translateX(0);
 }
 
 .hamburger::before, .hamburger::after {
@@ -515,6 +514,7 @@ td ul, td ol {
     bottom    : 50%;
     transform : translateY(50%) rotate(-45deg);
 }
+
 /*----------------------------Fin de estilos de los Botones--------------------------------------*/
 
 @media screen and (min-width : 1024px) {
@@ -556,8 +556,8 @@ td ul, td ol {
     }
 
     .mainContent {
-        width  : 65%;
-        margin : 10px;
+        max-width : 65%;
+        min-width : 40%;
     }
 
     .copyright {
@@ -570,54 +570,57 @@ td ul, td ol {
     }
 }
 
-@media screen and (min-width: 768px){
-
-    .footer .logo{
-        display: inline;
+@media screen and (min-width : 768px) {
+    .mainContent {
+        margin : 20px;
     }
 
-    .header .wrapper{
-        grid-template-columns: 100px 1fr;
+    .footer .logo {
+        display : inline;
     }
 
-    .hamburger{
-        display: none;
+    .header .wrapper {
+        grid-template-columns : 100px 1fr;
     }
 
-    .nav{
-        position: relative;
-        flex-direction: column;
-        transform: translateX(0);
-        background: 0 0;
-        padding: 0;
+    .hamburger {
+        display : none;
     }
 
-    .nav, .nav .menu{
-        display: flex;
-        justify-content: flex-end;
+    .nav {
+        position       : relative;
+        flex-direction : column;
+        transform      : translateX(0);
+        background     : 0 0;
+        padding        : 0;
     }
 
-    .nav .menu{
-        order: 2;
+    .nav, .nav .menu {
+        display         : flex;
+        justify-content : flex-end;
     }
 
-    .nav .social{
-        position: absolute;
-        top: 0;
-        bottom: auto;
-        right: 0;
+    .nav .menu {
+        order : 2;
     }
 
-    .nav .social svg{
-        width: 25px;
-        height: 25px;
+    .nav .social {
+        position : absolute;
+        top      : 0;
+        bottom   : auto;
+        right    : 0;
     }
 
-    .nav .social svg:hover{
-        border-radius: 5px;
-        padding: 2px;
-        background-color: var(--emphasis-color);
-        fill: var(--background-color);
-        transition: fill .5s;
+    .nav .social svg {
+        width  : 25px;
+        height : 25px;
+    }
+
+    .nav .social svg:hover {
+        border-radius    : 5px;
+        padding          : 2px;
+        background-color : var(--emphasis-color);
+        fill             : var(--background-color);
+        transition       : fill .5s;
     }
 }
