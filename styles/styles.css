@@ -395,10 +395,10 @@ td ul, td ol {
     height           : 30px;
     cursor           : pointer;
     transition       : transform 0.25s;
-    z-index          : 15;
     border           : 0;
     margin           : 10px;
     background-color : var(--background-color);
+    z-index: 1600;
 }
 
 .nav.active {
