@@ -10,7 +10,7 @@
     --heading-1            : 7rem;
     --heading-2            : 6rem;
     --heading-3            : 4.5rem;
-    --text                 : 2.5rem;
+    --main-text                 : 2.5rem;
 }
 
 *, :after, :before {
@@ -28,7 +28,7 @@ body {
     font-family      : var(--primary-font);
     color            : var(--text-color);
     font-weight      : 400;
-    font-size        : var(--text);
+    font-size        : var(--main-text);
 }
 
 h1, h2, h3, h4 {
@@ -68,11 +68,6 @@ img {
     width : 500px;
 }
 
-.me {
-    width         : 200px;
-    border-radius : 50%;
-}
-
 article {
     text-align : center;
 }
@@ -81,17 +76,6 @@ main img {
     display : block;
     margin  : 10px auto;
 }
-
-.wrapper {
-    width                 : 100%;
-    margin                : 0 auto;
-    padding-top           : 40px;
-    position              : relative;
-    display               : grid;
-    grid-template-columns : 100%;
-    grid-template-rows    : auto 40px;
-}
-
 /*-----------------------Fin de los estilos Generales--------------------------------*/
 
 /*----------------------------Estilos del Header------------------------------------*/
@@ -137,9 +121,9 @@ div {
     left            : 0;
     width           : 100%;
     height          : 100%;
-    z-index         : 5;
+    z-index         : 1500;
     background      : var(--sub-background-color);
-    transition      : transform 1s;
+    transition      : transform .5s;
     transform       : translateX(100%);
 }
 
@@ -162,80 +146,41 @@ div {
     right    : 30px;
 }
 
-.nav .social svg {
-    width  : 30px;
-    height : 30px;
+.nav .social .socialLogo{
+    width  : 25px;
+    height : 25px;
     fill   : var(--emphasis-color);
 }
 
 /*-----------------------Fin de los estilos del Header--------------------------------*/
 /*----------------------------Estilos del Index------------------------------------*/
-main {
-    position    : relative;
-    grid-column : 1;
-    grid-row    : 1;
-}
-
-.mainContent {
-    max-width : 70%;
-    min-width : 400px;
-    margin    : 0 auto;
-}
-
 .recent {
     background-color : #233554;
-    grid-column      : 1;
-    grid-row         : 1;
-}
-
-.recent-container {
-    display               : grid;
-    overflow              : auto;
-    grid-template-columns : repeat(3, 1fr);
-    grid-auto-flow        : column;
 }
 
 .recent-content {
-    max-width : 30vw;
-    min-width : 300px;
+    min-width: 300px;
 }
 
 .recent p {
     text-align : left;
 }
 
-.recent p:last-of-type {
-    margin-block   : 0;
-    padding-bottom : 10px;
-}
-
-.container {
-    /*margin-inline: 5px;*/
-    padding     : 5px;
-    display     : flex;
-    /*flex        : 1;*/
-    align-items : center;
-}
-
-.container img:not(.me) {
-    width : 60%;
-}
-
-.container:nth-of-type(odd) {
+.cardContainer:nth-of-type(odd) {
     border-right               : 3px solid #64FFDA;
     border-bottom              : 3px solid #64FFDA;
     border-bottom-right-radius : 30px;
     flex-direction             : column;
 }
 
-.container:nth-of-type(even) {
+.cardContainer:nth-of-type(even) {
     border-left               : 3px solid #64FFDA;
     border-bottom             : 3px solid #64FFDA;
     border-bottom-left-radius : 30px;
     flex-direction            : column;
 }
 
-.container:first-of-type {
+.cardContainer:first-of-type {
     flex-direction : column;
 }
 
@@ -385,9 +330,7 @@ td ul, td ol {
     padding-block    : 5px;
     display          : flex;
     justify-content  : space-between;
-    position         : fixed;
-    bottom           : 0;
-    z-index          : 2;
+    z-index          : 10;
     padding-inline   : 10px;
 }
 
@@ -441,17 +384,6 @@ td ul, td ol {
     color            : #0A192F;
 }
 
-/*Botón primario pendiente de encontrar un diseño atractivo*/
-
-/*.primaryButton {*/
-/*    color            : var(--background-color);*/
-/*    background-color : var(--emphasis-color);*/
-/*}*/
-
-/*.primaryButton:hover {*/
-/*    color            : #E6F1FF;*/
-/*    background-color : var(--background-color);*/
-/*}*/
 .hamburger {
     display          : block;
     position         : fixed;
@@ -461,7 +393,7 @@ td ul, td ol {
     height           : 30px;
     cursor           : pointer;
     transition       : transform 0.25s;
-    z-index          : 5;
+    z-index          : 15;
     border           : 0;
     margin           : 10px;
     background-color : var(--background-color);
@@ -522,42 +454,23 @@ td ul, td ol {
         --heading-1 : 8rem;
         --heading-2 : 7rem;
         --heading-3 : 5.5rem;
-        --text      : 3.5rem;
+        --main-text      : 3.5rem;
     }
 
-    .recent {
-        position  : fixed;
-        top       : 100px;
-        right     : 0;
-        max-width : 25%;
-        min-width : 320px;
-        height    : calc(100vh - 80px);
-        overflow  : auto;
+    .recent{
+        height: calc(100vh - 40px);
     }
 
-    .recent-container {
-        display : block;
-    }
-
-    .recent p {
-        padding-inline : 10px;
-    }
-
-    .container:nth-of-type(odd) {
+    .cardContainer:nth-of-type(odd) {
         flex-direction : row;
     }
 
-    .container:nth-of-type(even) {
+    .cardContainer:nth-of-type(even) {
         flex-direction : row-reverse;
     }
 
-    .container:first-of-type {
+    .cardContainer:first-of-type {
         flex-direction : column;
-    }
-
-    .mainContent {
-        max-width : 65%;
-        min-width : 40%;
     }
 
     .copyright {
@@ -571,10 +484,6 @@ td ul, td ol {
 }
 
 @media screen and (min-width : 768px) {
-    .mainContent {
-        margin : 20px;
-    }
-
     .footer .logo {
         display : inline;
     }
@@ -591,8 +500,7 @@ td ul, td ol {
         position       : relative;
         flex-direction : column;
         transform      : translateX(0);
-        background     : 0 0;
-        padding        : 0;
+        background     : 0;
     }
 
     .nav, .nav .menu {
@@ -605,18 +513,11 @@ td ul, td ol {
     }
 
     .nav .social {
-        position : absolute;
         top      : 0;
-        bottom   : auto;
         right    : 0;
     }
 
-    .nav .social svg {
-        width  : 25px;
-        height : 25px;
-    }
-
-    .nav .social svg:hover {
+    .nav .social .socialLogo:hover {
         border-radius    : 5px;
         padding          : 2px;
         background-color : var(--emphasis-color);
