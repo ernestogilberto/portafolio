@@ -10,7 +10,7 @@
     --heading-1            : 7rem;
     --heading-2            : 6rem;
     --heading-3            : 4.5rem;
-    --main-text                 : 2.5rem;
+    --main-text            : 2.5rem;
 }
 
 *, :after, :before {
@@ -76,6 +76,7 @@ main img {
     display : block;
     margin  : 10px auto;
 }
+
 /*-----------------------Fin de los estilos Generales--------------------------------*/
 
 /*----------------------------Estilos del Header------------------------------------*/
@@ -146,7 +147,7 @@ div {
     right    : 30px;
 }
 
-.nav .social .socialLogo{
+.nav .social .socialLogo {
     width  : 25px;
     height : 25px;
     fill   : var(--emphasis-color);
@@ -159,7 +160,7 @@ div {
 }
 
 .recent-content {
-    min-width: 300px;
+    min-width : 300px;
 }
 
 .recent p {
@@ -454,11 +455,11 @@ td ul, td ol {
         --heading-1 : 8rem;
         --heading-2 : 7rem;
         --heading-3 : 5.5rem;
-        --main-text      : 3.5rem;
+        --main-text : 3.5rem;
     }
 
-    .recent{
-        height: calc(100vh - 40px);
+    .recent {
+        height : calc(100vh - 40px);
     }
 
     .cardContainer:nth-of-type(odd) {
@@ -513,8 +514,8 @@ td ul, td ol {
     }
 
     .nav .social {
-        top      : 0;
-        right    : 0;
+        top   : 0;
+        right : 0;
     }
 
     .nav .social .socialLogo:hover {
