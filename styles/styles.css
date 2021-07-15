@@ -157,6 +157,7 @@ div {
 /*----------------------------Estilos del Index------------------------------------*/
 .recent {
     background-color : #233554;
+    max-height : calc(100vh - 40px);
 }
 
 .recent-content {
@@ -331,7 +332,7 @@ td ul, td ol {
     padding-block    : 5px;
     display          : flex;
     justify-content  : space-between;
-    z-index          : 10;
+    z-index          : 1500;
     padding-inline   : 10px;
 }
 
@@ -456,10 +457,6 @@ td ul, td ol {
         --heading-2 : 7rem;
         --heading-3 : 5.5rem;
         --main-text : 3.5rem;
-    }
-
-    .recent {
-        height : calc(100vh - 40px);
     }
 
     .cardContainer:nth-of-type(odd) {
