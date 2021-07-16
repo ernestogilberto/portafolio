@@ -78,14 +78,75 @@
     </header>
     <!--        Fin del area del Header y Navegación         -->
     <div class="wrapper">
+        
         <!--        Principio del area del Main         -->
         <main>
             <h1>Te comparto lo que se sobre desarrollo y algo mas.</h1>
             
+            <!--        Carousel para mostrar las entradas destacadas-->
+            <h2>Destacadas</h2>
+            <div class="carousel slide carousel-fade" data-ride="carousel" id="carouselExampleCaptions">
+                <ol class="carousel-indicators bg-control">
+                    <li class="active" data-slide-to="0" data-target="#carouselExampleCaptions"></li>
+                    <li data-slide-to="1" data-target="#carouselExampleCaptions"></li>
+                    <li data-slide-to="2" data-target="#carouselExampleCaptions"></li>
+                    <li data-slide-to="3" data-target="#carouselExampleCaptions"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item slide-size active" data-interval="2000">
+                        <a href="#html"><img alt="Logotipo de HTML5" class="d-block w-100"
+                                             src="../assets/images/html5.jpg">
+                            <div class="carousel-caption d-none d-md-block bg-slide">
+                                <h3>HTML5 el estándar en desarrollo web</h3>
+                                <p>Descubramos porque HTML5 es el estándar en desarrollo web.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item slide-size" data-interval="2000">
+                        <a href="#browsers"><img alt="Logotipos de navegadores" class="d-block w-100"
+                                                 src="../assets/images/navegadores.jpg">
+                            <div class="carousel-caption d-none d-md-block bg-slide">
+                                <h3>¿Qué es un navegador web?</h3>
+                                <p>Por si aun te preguntabas ¿Qué es un navegador web? aquí te tenemos la respuesta.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item slide-size" data-interval="2000">
+                        <a href="#halo"><img alt="Imagen de Halo 5" class="d-block w-100"
+                                             src="../assets/images/halo-5.jpg">
+                            <div class="carousel-caption d-none d-md-block bg-slide">
+                                <h3>Trailer Halo 5</h3>
+                                <p>La espera termino, por fin tenemos las primeras imágenes de Halo 5</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item slide-size" data-interval="2000">
+                        <a href="#gears"><img alt="Imagen de Gears of War 3" class="d-block w-100"
+                                              src="../assets/images/gears-3.jpg">
+                            <div class="carousel-caption d-none d-md-block bg-slide">
+                                <h3>Trailer Gears of War 3</h3>
+                                <p>La espera termino, por fin tenemos las primeras imágenes de Gears of War 3</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a class="carousel-control-prev bg-control" data-slide="prev" href="#carouselExampleCaptions"
+                   role="button">
+                    <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next bg-control" data-slide="next" href="#carouselExampleCaptions"
+                   role="button">
+                    <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            
+            <!--            Entradas del Blog-->
             <section>
                 <h2>Desarrollo</h2>
                 
-                <article>
+                <article id="html">
                     <h3>HTML5 el estandar en desarrolo web</h3>
                     <h4>Autor 1</h4>
                     <p class="caption">fecha</p>
@@ -97,7 +158,7 @@
                         voluptatum.</p>
                 </article>
                 
-                <article>
+                <article id="browsers">
                     <h3>¿Qué es un navegador web?</h3>
                     <h4>Autor 2</h4>
                     <p class="caption">fecha</p>
@@ -115,7 +176,7 @@
             <section>
                 <h2>Videojuegos</h2>
                 
-                <article>
+                <article id="halo">
                     <h3>Trailer Halo 5</h3>
                     <h4>Autor 1</h4>
                     <p class="caption">fecha</p>
@@ -130,7 +191,7 @@
                         voluptatum.</p>
                 </article>
                 
-                <article>
+                <article id="gears">
                     <h3>Trailer Gears of War 3</h3>
                     <h4>Autor 2</h4>
                     <p class="caption">fecha</p>

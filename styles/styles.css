@@ -10,6 +10,7 @@
     --heading-1            : 7rem;
     --heading-2            : 6rem;
     --heading-3            : 4.5rem;
+    --heading-4            : 3.5rem;
     --main-text            : 2.5rem;
 }
 
@@ -51,6 +52,10 @@ h3 {
     font-size : var(--heading-3);
 }
 
+h4 {
+    font-size : var(--heading-4);
+}
+
 p {
     margin : 20px 20px;
 }
@@ -62,6 +67,18 @@ p.caption {
 .caption {
     font-weight : 200;
     color       : var(--emphasis-color);
+}
+
+.bg-slide {
+    background-color : var(--sub-background-color);
+}
+
+.slide-size {
+    height : 50vh;
+}
+
+.bg-control {
+    background-color : var(--sub-background-color);
 }
 
 img {
@@ -157,7 +174,7 @@ div {
 /*----------------------------Estilos del Index------------------------------------*/
 .recent {
     background-color : #233554;
-    max-height : calc(100vh - 40px);
+    max-height       : calc(100vh - 40px);
 }
 
 .recent-content {
@@ -398,7 +415,7 @@ td ul, td ol {
     border           : 0;
     margin           : 10px;
     background-color : var(--background-color);
-    z-index: 1600;
+    z-index          : 1600;
 }
 
 .nav.active {
