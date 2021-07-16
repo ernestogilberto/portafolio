@@ -81,6 +81,10 @@ p.caption {
     background-color : var(--sub-background-color);
 }
 
+.carousel-caption {
+    height : 35%;
+}
+
 img {
     width : 500px;
 }
