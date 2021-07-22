@@ -89,10 +89,6 @@ img {
     width : 500px;
 }
 
-article {
-    text-align : center;
-}
-
 main img {
     display : block;
     margin  : 10px auto;
@@ -109,12 +105,12 @@ div {
     display : block;
 }
 
-.header .wrapper {
+.header {
     display : grid;
     padding : 10px;
 }
 
-.link {
+.menu__link, .menu__link--active {
     display        : inline;
     padding        : 0.5rem 2rem;
     color          : var(--emphasis-color);
@@ -123,15 +119,21 @@ div {
     width          : 100%;
 }
 
-.link:hover {
+.menu__link:hover {
     font-size : 4rem;
+}
+
+.menu__link--active{
+    border-bottom-right-radius: 10px;
+    border-bottom: 2px solid var(--emphasis-color);
+    border-right: 2px solid var(--emphasis-color);
 }
 
 .nav ul {
     list-style : none;
 }
 
-.logo {
+.header__logo {
     width : 200px;
 }
 
@@ -149,17 +151,18 @@ div {
     transform       : translateX(100%);
 }
 
-.nav .menu {
+.nav .nav__menu {
     top  : 0;
     left : 0;
 }
 
-.nav .menu a {
+.nav .nav__menu a {
     display        : block;
     font-weight    : 700;
     color          : var(--emphasis-color);
     letter-spacing : .2em;
-    padding        : 15px;
+    padding        : 5px 15px;
+    margin: 0;
 }
 
 .nav .social {
@@ -168,7 +171,7 @@ div {
     right    : 30px;
 }
 
-.nav .social .socialLogo {
+.nav .social .social__logo {
     width  : 25px;
     height : 25px;
     fill   : var(--emphasis-color);
@@ -181,7 +184,7 @@ div {
     max-height       : calc(100vh - 40px);
 }
 
-.recent-content {
+.recent__content {
     min-width : 300px;
 }
 
@@ -209,7 +212,7 @@ div {
 
 /*----------------------------Fin de estilos del Index------------------------------------*/
 /*-----------------------Estilos de Formularios--------------------------------*/
-form {
+.form {
     display        : flex;
     flex-direction : column;
     align-items    : center;
@@ -218,33 +221,33 @@ form {
     gap            : 10px;
 }
 
-.form-content {
+.form__content {
     width               : 500px;
     display             : grid;
     grid-template-areas : 'name''mail''services''newsletter''specs''specs''buttons';
 }
 
-.name {
+.form__content--name {
     grid-area : name;
 }
 
-.mail {
+.form__content--mail {
     grid-area : mail;
 }
 
-.services {
+.form__content--services {
     grid-area : services;
 }
 
-.newsletter {
+.form__content--newsletter {
     grid-area : newsletter;
 }
 
-.specs {
+.form__content--specs {
     grid-area : specs;
 }
 
-.buttons {
+.form__content--buttons {
     grid-area : buttons;
 }
 
@@ -312,34 +315,34 @@ input.button {
 
 /*-----------------------Fin de los estilos de Formularios--------------------------------*/
 /*-----------------------Estilos de Tablas--------------------------------*/
-table {
+.services {
     margin : 10px auto;
 }
 
-th {
+.services__header {
     font-weight : 700;
 }
 
-.tableService {
+.services__header--service {
     color            : var(--background-color);
     background-color : var(--emphasis-color);
 }
 
-.tableCategory {
+.services__header--category {
     color            : var(--emphasis-color);
     background-color : var(--sub-background-color);
 }
 
-td li {
-    list-style-position : inside;
-}
-
-th, td {
+.services__item{
     padding    : 10px;
     text-align : center;
 }
 
-td ul, td ol {
+.services__list--inside {
+    list-style-position : inside;
+}
+
+.services__list {
     text-align : left;
 }
 
@@ -357,7 +360,7 @@ td ul, td ol {
     padding-inline   : 10px;
 }
 
-.footer .logo {
+.footer__logo {
     display : none;
     height  : 100%;
 }
@@ -372,9 +375,10 @@ td ul, td ol {
     display      : flex;
     align-self   : center;
     margin-right : 10px;
+    max-height: 25px;
 }
 
-.socialLogo {
+.social__logo {
     width         : 30px;
     height        : 30px;
     margin-inline : 2px;
@@ -382,7 +386,7 @@ td ul, td ol {
     border-radius : 3px;
 }
 
-.socialLogo:hover {
+.social__logo:hover {
     background-color : var(--emphasis-color);
     fill             : var(--background-color);
 }
@@ -496,18 +500,18 @@ td ul, td ol {
         margin : 20px;
     }
 
-    .form-content {
+    .form__content {
         width               : 800px;
         grid-template-areas : 'name services''mail specs' 'newsletter specs''buttons buttons';
     }
 }
 
 @media screen and (min-width : 768px) {
-    .footer .logo {
+    .footer__logo {
         display : inline;
     }
 
-    .header .wrapper {
+    .header {
         grid-template-columns : 100px 1fr;
     }
 
@@ -522,12 +526,12 @@ td ul, td ol {
         background     : 0;
     }
 
-    .nav, .nav .menu {
+    .nav, .nav .nav__menu {
         display         : flex;
         justify-content : flex-end;
     }
 
-    .nav .menu {
+    .nav .nav__menu {
         order : 2;
     }
 
@@ -536,7 +540,7 @@ td ul, td ol {
         right : 0;
     }
 
-    .nav .social .socialLogo:hover {
+    .nav .social .social__logo:hover {
         border-radius    : 5px;
         padding          : 2px;
         background-color : var(--emphasis-color);
