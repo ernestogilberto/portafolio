@@ -1,0 +1,15 @@
+$colors:(
+    background-color: #0A192F,
+    sub-background-color: #233554,
+    title-color: #CCD6F6,
+    text-color: #E6F1FF,
+    emphasis-color: #64FFDA,
+    shadow-color: rgba(100, 255, 218,.5)
+);
+
+@function color ($color-key){
+    @if map-has-key($map: $colors, $key: $color-key) {
+        @return map-get($map: $colors, $key: $color-key);
+    }
+    @return null;
+}

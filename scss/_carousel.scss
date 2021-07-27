@@ -1,0 +1,31 @@
+@import 'colors';
+@import "fonts";
+
+.bg-slide, .bg-control {
+  background-color: color(sub-background-color);
+}
+
+.slide-size {
+  height: 50vh;
+}
+
+.carousel-caption {
+  height: 35%;
+}
+
+.carousel-caption p {
+  font-family: $primary-font;
+  color: color(text-color);
+}
+
+.carousel-indicators li {
+  background-color: color(emphasis-color);
+}
+
+.carousel-control-next-icon {
+  background-image: url(../assets/images/next.svg);
+}
+
+.carousel-control-prev-icon {
+  background-image: url(../assets/images/prev.svg);
+}

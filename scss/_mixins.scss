@@ -1,0 +1,24 @@
+@import "colors";
+
+@mixin cardContainer {
+  .cardContainer {
+    border-bottom: 3px solid color(emphasis-color);
+    flex-direction: column;
+
+    &:nth-of-type(odd) {
+      border-right: 3px solid color(emphasis-color);
+      border-bottom-right-radius: 30px;
+    }
+
+    &:nth-of-type(even) {
+      border-left: 3px solid color(emphasis-color);
+      border-bottom-left-radius: 30px;
+    }
+  }
+}
+
+@mixin gridArea($area) {
+  .form__content--#{$area} {
+    grid-area: $area;
+  }
+}
