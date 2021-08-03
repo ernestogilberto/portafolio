@@ -31,7 +31,14 @@ h4 {
   color: color(title-color);
   font-weight: 700;
   text-align: center;
-  margin: 20px 0;
+  margin: 0 0 20px 0;
+  padding-top: 20px;
+}
+
+section h2{
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid color(white);
 }
 
 h1 {
@@ -430,6 +437,11 @@ input.button {
 
   .cardContainer:first-of-type {
     flex-direction: column;
+  }
+
+  iframe{
+    display: block;
+    margin: 0 auto;
   }
 
   .copyright {
