@@ -73,6 +73,7 @@ p.caption {
 img {
   display: block;
   max-width: 500px;
+  width: 90%;
 }
 
 main img {
@@ -80,10 +81,34 @@ main img {
   margin: 10px auto;
 }
 
-iframe {
-  display: block;
-  margin: 0 auto;
-  max-width: 90%;
+//iframe {
+//  display: block;
+//  margin: 0 auto;
+//  //width: 90%;
+//  //height: auto;
+//  //max-width: 560px;
+//  //height: 50.6%;
+//}
+//
+//.iframe-container{
+//  width: 90%;
+//}
+
+.video-responsive {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  position: relative;
+  margin-inline: 20px;
+}
+.video-responsive iframe, .video-responsive object, .video-responsive embed {
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 /*-----------------------Fin de los estilos Generales--------------------------------*/
@@ -488,5 +513,12 @@ input.button {
   .nav .social {
     top: 0;
     right: 0;
+  }
+
+  .video-responsive {
+    padding-bottom: 28.125%;
+  }
+  .video-responsive iframe, .video-responsive object, .video-responsive embed {
+    width: 50%;
   }
 }
