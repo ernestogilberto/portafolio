@@ -49,7 +49,8 @@ p {
 
 .caption {
   font-weight: 200;
-  color: #64FFDA; }
+  color: #64FFDA;
+  font-size: 1rem; }
 
 p.caption {
   text-align: center; }
@@ -286,8 +287,8 @@ input.button {
   z-index: 1500;
   padding-inline: 10px; }
   .footer .social__logo {
-    width: 30px;
-    height: 30px; }
+    width: 20px;
+    height: 20px; }
 
 .footer__logo {
   display: none;
@@ -296,7 +297,8 @@ input.button {
 .copyright {
   display: flex;
   align-self: center;
-  margin: 10px; }
+  margin-inline: 10px;
+  line-height: 1.2rem; }
 
 .social {
   display: flex;
@@ -394,6 +396,9 @@ input.button {
 @media screen and (min-width: 768px) {
   .footer__logo {
     display: inline; }
+  .footer .social__logo {
+    width: 30px;
+    height: 30px; }
   .header {
     grid-template-columns: 100px 1fr; }
   .hamburger {
