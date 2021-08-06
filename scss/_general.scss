@@ -103,6 +103,7 @@ main img {
   position: relative;
   margin-inline: 20px;
 }
+
 .video-responsive iframe, .video-responsive object, .video-responsive embed {
   height: 100%;
   left: 50%;
@@ -249,6 +250,7 @@ input {
   border-bottom: 2px solid color(emphasis-color);
   border-radius: 3px;
   outline: none;
+  color: color(text-color);
 
   &:focus {
     box-shadow: 0 0 1px 2px rgba(100, 255, 218, 0.3);
@@ -488,7 +490,7 @@ input.button {
     display: inline;
   }
 
-  .footer .social__logo{
+  .footer .social__logo {
     width: 30px;
     height: 30px;
   }
